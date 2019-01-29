@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .container{
+        width: 1226px;
+        margin: 0 auto;
+        height: 20px;
+    }
+    .logo{
+
+        float: left;
+      width: 62px;
+      height: 60px;
+    }
+    .logo a{
+        display: block;
+        width: 55px;
+        height: 55px;
+        background-color:#ff6700 ;
+    }
+    .logo-a::before{
+        content: "";
+      display: block;
+      width: 55px;
+      height: 55px;
+      background: url("./mi-logo.png") no-repeat 50% 50%
+    }
+    .center{
+        width: 850px;
+        height: 100px;
+        background-color: aqua;
+        float: left;
+    }
+    .right{
+        float: right;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <a href="" class="logo-a"></a>
+        </div>
+        <div class="center"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

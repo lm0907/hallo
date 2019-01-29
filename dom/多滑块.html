@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 200px;
+        height: 50px;
+        background-color: black;
+        margin-bottom: 10px;
+    }
+    </style>
+</head>
+<body>
+    <div class="tag"></div>
+    <div class="tag"></div>
+    <div class="tag"></div>
+    <script>
+        var abox=document.getElementsByClassName("tag");
+        
+        for(var i=0;i<abox.length;i++){
+            abox[i].timer=null;
+            abox[i].onmouseover=function(){
+                var _this=this;
+                clearInterval(_this.timer);
+                _this.timer=setInterval(function(){
+                    if(_this.offsetWidth<500)
+                    {
+                        _this.style.width =_this.offsetWidth+10+"px";
+                    }
+                    else{
+                        clearInterval(_this.timer);
+                    }
+                },16);
+            }
+            abox[i].onmouseout=function(){
+                var _this=this;
+                clearInterval(_this.timer);
+                _this.timer=setInterval(function(){
+                    if(_this.offsetWidth>200)
+                    {
+                        _this.style.width =_this.offsetWidth-10+"px";
+                    }
+                    else{
+                        clearInterval(_this.timer);
+                    }
+                },16);
+            }
+        }
+        
+        </script>
+</body>
+</html>

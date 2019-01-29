@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="ss"></div>
+    <script>
+        var disx,disy;
+        var x=document.getElementById("ss");
+        x.onmousedown=function(e){
+            disx=e.clientX-x.offsetLeft;
+            disy=e.clientY-x.offsetTop;
+            document.onmousemove=function(e){
+                var left=e.clientX-disx;
+                var top=e.clientY-disy;
+                if(left<=0)
+                {
+                    left=0;
+                }
+                if(top<=0){
+                    top=0;
+                }
+                x.style.left=left+"px";
+                x.style.top=top+"px";
+            }
+        }
+        x.onmouseup=function(){
+            document.onmousemove=null;
+        }
+    </script>
+</body>
+</html>

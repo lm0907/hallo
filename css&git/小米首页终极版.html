@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_900724_6mlfwsaugvl.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        .container{
+            display: block;
+            widows: 100%;
+            height: 40px;
+            background-color: #333;
+        }
+        .insideblock{
+            width: 1226px;
+            height: 40px;
+            margin: 0 auto;
+        }
+        .insideblock .toobar{
+            width: 550px;
+            height: 40px;
+            float: left;
+        }
+        .insideblock .toobar a{
+            display: inline-block;
+            line-height: 40px;
+            color:#b0b0b0;
+            font-size: 12px;
+        }
+        .insideblock .toobar span{
+            font-size: 12px;
+            margin: 0 0.5px;
+            color:#424242;
+        }
+        .insideblock .shoppingcar{
+            width: 120px;
+            height: 40px;
+            margin-left: 15px;
+            float: right;
+        }
+        .insideblock .shoppingcar a{
+            display: inline-block;
+            height: 40px;
+            width: 120px;
+            background-color: #424242;
+            color:#b0b0b0;
+            text-align: center;
+            line-height: 40px;
+            font-size: 12px;
+        }
+        .toobar-info{
+            width: 152px;
+            height: 40px;
+            float: right;
+        }
+        .toobar-info a{
+            display: inline-block;
+            padding: 0 5px;
+            font-size: 12px;
+            line-height: 40px;
+            color: #b0b0b0;
+        }
+        .toobar-info span{
+            color:#424242;
+            font-size: 12px;
+            padding: 0;
+        }
+        .picblock{
+            width: 1226px;
+            height: 100px;
+            margin: 0 auto;
+        }
+        .picblock .mi-logo{
+            width: 62px;
+            height: 55px;
+            margin-top: 22px;
+            float: left;
+            
+        }
+        .picblock .mitu{
+            height: 55px;
+            width: 55px;
+            background-color: #ff6700;
+            background-image: url(mi-logo.png);
+            background-repeat:no-repeat;
+            display: block;
+            overflow: hidden;
+            text-align: center;
+            background-position: center;
+        }
+        .tupic-center{
+            display: inline-block;
+            width: 850px;
+            height: 100px;
+            overflow: hidden;
+        }
+        .center-list{
+            width: 820px;
+            height: 88px;
+            padding: 12px 0 0 38px;
+        }
+        .center-list li{
+            list-style: none;
+            float: left;
+            color: #333;
+        }
+        .center-list li:nth-child(1){
+            width: 127px;
+            height: 88px;
+            padding-right: 15px;
+        }
+        .center-list li:nth-child(1) a{
+            display: block;
+            width: 127px;
+            height: 24px;
+            padding:26px 0 38px 0;
+        }
+        .center-list li:nth-child(2){
+            width: 64px;
+            height: 24px;
+            padding: 26px 10px 38px 10px;
+        }
+        .center-list li:nth-child(3){
+            width: 32px;
+            height: 24px;
+            padding: 26px 10px 38px 10px;
+        }
+        .center-list li:nth-child(4){
+            width: 32px;
+            height: 24px;
+            padding: 26px 10px 38px 10px;
+        }
+        .center-list li:nth-child(5){
+            width: 48px;
+            height: 24px;
+            padding: 26px 10px 38px 10px;
+        }
+        .center-list li:nth-child(6){
+            width: 32px;
+            height: 24px;
+            padding: 26px 10px 38px 10px;
+        }
+        .center-list li:nth-child(7){
+            width: 32px;
+            height: 24px;
+            padding: 26px 10px 38px 10px;
+        }
+        .center-list li:nth-child(8){
+            width: 48px;
+            height: 24px;
+            padding: 26px 10px 38px 10px;
+        }
+        .center-list li:nth-child(9){
+            width: 64px;
+            height: 24px;
+            padding: 26px 10px 38px 10px;
+        }
+        .center-list li:nth-child(10){
+            width: 32px;
+            height: 24px;
+            padding: 26px 10px 38px 10px;
+        }
+        .center-list li:nth-child(11){
+            width: 32px;
+            height: 24px;
+            padding: 26px 10px 38px 10px;
+        }
+        .pic-form{
+            width: 296px;
+            height: 50px;
+            float: right;
+            margin-top: 25px;
+            position: relative;
+        }
+        .input1{
+            display: inline-block;
+            width: 223px;
+            height: 48px;
+            padding: 0 10px;
+            border: 1px solid #e0e0e0;
+            font-size: 14px;
+        }
+        .input2{
+            display: inline-block;
+            width: 38px;
+            height: 46px;
+            border: 1px solid #e0e0e0;
+            background-color: white;
+            box-sizing: content-box;
+            padding: 1px 6px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .bl{
+            width: 122px;
+            height: 21px;
+            font-size: 12px;
+            position: absolute;
+            top: 16px;
+            right: 61px;
+        }
+        .bl .mi8{
+            display: inline-block;
+            margin-left: 5px;
+            padding: 0 5px;
+            font-size: 12px;
+            background: #eee;
+            color: #757575;
+        }
+        .bl .mi2s{
+            display: inline-block;
+            margin-left: 5px;
+            padding: -1px 5px;
+            font-size: 12px;
+            background: #eee;
+            color: #757575;
+        }
+        .bl i{
+            position: absolute;
+            top:10px;
+            right: 0;
+            font-size: 24px;
+            color: #333;
+            display: block;
+        }
+        .best-bl{
+            width: 1226px;
+            height: 460px;
+            position: relative;
+        }
+        .best-bl img{
+            width: 1226px;
+            height: 460px;
+        }
+        .biao{
+            width: 234px;
+            height: 460px;
+            background-color:rgba(0,0,0,0.6);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .biao ul{
+            padding:20px 0;
+            height: 420px;
+            width: 234px;
+        }
+        .biao li{
+            width: 234px;
+            height: 42px;
+            line-height: 42px;
+            position: relative;
+        }
+        .biao li a{
+            display: block;
+            width: 204px;
+            color: white;
+            height: 42px;
+            margin-left: 30px;
+        }
+        .biao li span{
+            color:rgba(255,255,255,255.5);
+            position: absolute;
+            right:20px;
+            top: 0;
+        }
+        </style>
+</head>
+<body>
+    <div>
+        <div class="container">
+            <div class="insideblock">
+                <div class="toobar">
+                    <a href="">小米商城</a>
+                    <span>|</span>
+                    <a href="">MIUI</a>
+                    <span>|</span>
+                    <a href="">loT</a>
+                    <span>|</span>
+                    <a href="">云服务</a>
+                    <span>|</span>
+                    <a href="">金融</a>
+                    <span>|</span>
+                    <a href="">有品</a>
+                    <span>|</span>
+                    <a href="">小爱开放平台</a>
+                    <span>|</span>
+                    <a href="">政企服务</a>
+                    <span>|</span>
+                    <a href="">下载App</a>
+                    <span>|</span>
+                    <a href="">Slect Region</a>
+                
+                
+                </div>
+                <div class="shoppingcar">
+                    <a href=""><i class="buyc iconfont icon-gouwuchekong"></i>购物车<span>(0)</span></a>
+                </div>
+                <div class="toobar-info">
+                    <a href="">登录</a>
+                    <span>|</span>
+                    <a href="">注册</a>
+                    <span>|</span>
+                    <a href="">消息通知</a>
+                </div>
+            </div>
+        </div>
+        <div class="picblock">
+                <div class="mi-logo">
+                    <a href="" class="mitu"></a>
+                </div>
+                <div class="tupic-center">
+                    <ul class="center-list">
+                        <li>
+                            <a href=""></a>
+                        </li>
+                        <li>小米手机</li>
+                        <li>红米</li>
+                        <li>电视</li>
+                        <li>笔记本</li>
+                        <li>空调</li>
+                        <li>新品</li>
+                        <li>路由器</li>
+                        <li>智能硬件</li>
+                        <li>服务</li>
+                        <li>社区</li>
+                    </ul>
+                </div>
+                <div class="pic-form">
+                    <input type="text" class="input1">
+                    <input type="submit" class="input2" value="" >
+                    <div class="bl">
+                        <a href="" class="mi8">小米8</a>
+                        <a href="" class="mi2s">小米MIX 2S</a>
+                    </div>
+                    <i class="search iconfont icon-sousuo"></i>
+                </div>
+        </div>
+        <div class="best-bl">
+            <img src="bg.jpg" alt="">
+            <div class="biao">
+                <ul>
+                    <li>
+                        <a href="">手机 电话卡</a>
+                        <span>></span>
+                    </li>
+                    <li>
+                        <a href="">电视 盒子</a>
+                        <span>></span>
+                    </li>
+                    <li>
+                        <a href="">笔记本 平板</a>
+                        <span>></span>
+                    </li>
+                    <li>
+                        <a href="">家电 插线板</a>
+                        <span>></span>
+                    </li>
+                    <li>
+                        <a href="">出行 穿戴</a>
+                        <span>></span>
+                    </li>
+                    <li>
+                        <a href="">智能 路由器</a>
+                        <span>></span>
+                    </li>
+                    <li>
+                        <a href="">电源 配件</a>
+                        <span>></span>
+                    </li>
+                    <li>
+                        <a href="">健康 儿童</a>
+                        <span>></span>
+                    </li>
+                    <li>
+                        <a href="">耳机 音箱</a>
+                        <span>></span>
+                    </li>
+                    <li>
+                        <a href="">生活 箱包</a>
+                        <span>></span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

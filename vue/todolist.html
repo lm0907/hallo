@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+    .active{
+        background-color: orange;
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>todolist</h1>
+        <div>
+            <input type="text" placeholder="请输入商品名称" v-model="searchl">
+            <button @click="searchforit">🔍搜索</button>
+        </div>
+        <div>
+            <label for="">商品名称</label>
+            <input type="text" value="请输入商品名称" v-model="name">
+            <label for="">商品价格</label>
+            <input type="text" value="0" v-model="price">
+            <button @click="add">＋增加</button>
+        </div>
+            <table>
+                    <thead>
+                        <tr >
+                            <th v-for='item in columnList'>{{item}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for='(item,index) in inforList' :class="{active:item.is}" @click="item.is=!item.is" >
+                        <td><input type="checkbox" v-model="arr10" :value="item.id"></td>{{checkedalready}}
+                        <td>{{item.name}}</td>
+                        <td>{{item.price}}</td>
+                        <td v-html="htmlbutton" @click="delsingle(item.id)"></td>
+                    </tr>
+                    </tbody>
+                    
+                </table>
+        <button @click="delall">删除选中</button>
+        
+        价格：{{sum}}
+    </div>
+    <script>
+    new Vue({
+        
+          el: '#app',
+          data:{
+            columnList: ['选择', '商品名称', '商品价格',"操作"],
+            inforList:[{name:"衣服",price:"123",is:false,id:1},{name:"鞋子",price:"456",is:false,id:2},
+            {name:"帽子",price:"222",is:false,id:3},{name:"手机",price:"1234",is:false,id:4},{name:"电视",price:"4567",is:false,id:5}],
+            htmlcheckbox:"<input type='checkbox'>",
+          htmlbutton:"<button>×</button>",
+          name:"",
+          price:"",
+          nowid:5,
+          searchl:"",
+          selected:[]
+          },
+          methods:{
+            delsingle(id){
+                var arr=[];
+                arr=this.inforList.filter(function(val,index,a){
+                    if(id!=val.id){
+                        return val;
+                    }
+                })
+                this.inforList=arr;
+            },
+            add(){
+                let obj={
+                    id:this.nowid++,
+                    name:this.name,
+                    price:this.price,
+                    is:false
+                }
+                this.inforList.push(obj)
+            },
+            searchforit(){
+                let _this=this
+          let thisArr = [];
+          thisArr = this.inforList.filter(function(val,index){
+            if(val.name.includes(_this.searchl)){
+              console.log(val.name,_this.searchl);
+              return val
+            }
+          })
+          this.inforList = thisArr;
+            },
+            delall(){
+                let arr=[];
+                this.inforList.forEach(function(val,index,a){
+                    if(!val.is){
+                        arr.push(val)
+                    }
+                })
+                this.inforList=arr;
+            }
+              
+          },
+          computed:{
+            sum(){
+                let arr=0;
+                this.inforList.forEach(function(val,index){
+                    if(val.is){
+                        arr+=parseInt(val.price);
+                    }
+                })
+                return arr;
+              },
+              arr10(){
+                  let arr = [];
+                  this.inforList.forEach(function(val,index){
+                    if(val.is){
+                        arr.push(val.id)
+                    }
+                })
+                return arr
+              }
+          }
+    })
+    </script>
+</body>
+</html>

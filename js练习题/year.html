@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        months=new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+    function runnian(year){
+        if((year%400==0)||(year%4==0&&year%100!=0))
+        return true;
+        else
+        return false;
+    }
+    function days(year,month,day){
+        var dayss=0;
+        if(runnian(year))
+        months[1]=29;
+        else{
+            for(var i=0;i<month-1;i++){
+                dayss+=months[i];
+            }
+            dayss+=day;
+        }
+        return dayss;
+    }
+    document.write(days(2018,12,1));
+    </script>
+</body>
+</html>

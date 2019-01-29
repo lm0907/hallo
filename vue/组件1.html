@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{num}}
+        <weichuang msg="test"  v-on:add1="add"></weichuang>
+        <fellow msg="29"></fellow>
+    </div>
+    <script>
+        Vue.component("weichuang",{
+            template:`
+            <div>
+                    <button @click="$emit('add1')">add</button>
+                    <h1>{{msg}}</h1>
+            <ul>
+                    <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            </ul></div>
+            `,props:["msg"]
+        })
+        new Vue({
+            el:"#app",data:{
+                num:0
+            },methods:{
+                add(){
+                    this.num++;
+                }
+            },components:{
+                "fellow":{
+                    template:`<h1>hello{{msg}}</h1>`,
+                    props:["msg"]
+                }
+            }
+        })
+    </script>
+</body>
+</html>

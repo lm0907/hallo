@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <script>
+    // function* hello(){
+    //     yield "hello"
+    //     yield "world"
+    //     return "cp"
+    // }
+    // var hw=hello();
+    // console.log(hw.next())
+    // console.log(hw.next())
+    // console.log(hw.next())
+
+    // function* foo(x) {
+    // var y = 2 * (yield (x + 1));
+    // var z = yield (y / 3);
+    //   return (x + y + z);
+    // }
+    // var a = foo(5);
+    // console.log(a.next());
+    // console.log(a.next(6));
+    // console.log(a.next(4));
+
+    // function req(url){
+    //   $.get(url,function(res){
+    //     a.next(res);
+    //   })
+    // }
+    // function* geAjax(){
+    //   console.log(yield req('./a.json'));
+    //   console.log(yield req('./b.json'));
+    //   console.log(yield req('./c.json'));
+    // }
+    // let a = geAjax();
+    // a.next();
+
+    //--------------------------------------
+    // function* hello(){
+    //   yield "hello"
+    //   yield "world"
+    //   return "over"
+    // }
+    // let he=hello();
+    // console.log(he.next())
+    // console.log(he.next())
+    // console.log(he.next())
+
+    // function* foo(x){
+    //   var y=2*(yield (x+1))
+    //   var z=yield(y/3)
+    //   return (x+y+z)
+    // }
+    // var a=foo(5);
+    // console.log(a.next())
+    // console.log(a.next(6))
+    // console.log(a.next(4))
+
+    function* getajax(){
+      console.log(yield req("./a.json"))
+      console.log(yield req("./b.json"))
+      console.log(yield req("./c.json"))
+    }
+
+    function req(url){
+      $.get(url,function(res){
+        a.next(res)
+      })
+    }
+    let a=getajax();a.next();
+    </script>
+</body>
+</html>

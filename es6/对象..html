@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // function foo(obj){
+    //     console.log(obj.a);
+    // }
+    // function foo({a,b,c}){
+    //     console.log(a,b,c)
+    // }
+    // var obj={
+    //     a:"1",b:"2",c:"3"
+    // }
+    // foo(obj)
+    // function foo(){
+    //     return {name:"xiaom",age:"12"}
+    // }
+    // let {name,age}=foo()
+    // console.log(name,age)
+    let obj='{"name":"xiaom","age":"20"}'
+    let {name,age}=JSON.parse(obj)
+    console.log(name,age)
+    </script>
+</body>
+</html>

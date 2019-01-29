@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-3.3.1.min.js"> </script>
+    <style>
+    .active{
+        background-color: yellow;
+    }
+    </style>
+</head>
+<body>
+    <input type="text" value="姓名">
+    <input type="password" value="密码">
+    <textarea name="" id="" cols="30" rows="10" ></textarea>
+    <script>
+    $("input,textarea").focus(function(){
+        $(this).addClass("active");
+        if(this.value==this.defaultValue){ 
+       $(this).val("");
+        }
+    });
+    $("input,textarea").blur(function(){
+        $(this).removeClass("active");
+       $(this).val(this.value==""?this.defaultValue:this.value)
+    });
+    $("textarea")[0].value="文本框";
+    </script>
+</body>
+</html>

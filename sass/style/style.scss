@@ -1,0 +1,82 @@
+@import "main";
+$color:"white";
+.box{
+    color: $color;
+    .box1{
+        width: 10px;
+    }
+}
+.div1{
+    background-color: $color;
+    &-content{
+        width: 20px;
+        &-text{
+            font-style: italic;
+        }
+    }
+}
+.clearfix{
+    &::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+$WIDTH:"width";
+.div10{
+    border: {
+        right: {
+            #{$WIDTH}:10px;
+        }
+        left: 2px;
+    }  
+}
+@mixin  name($w:10px,$h:20px) {
+    width: $w;
+    height: $h;  
+}
+.div11{
+    @include name(500px,500px );
+}
+.div12{
+    @include name(5px);
+}
+.div13{
+    color: aqua;
+}
+.div14{
+    font-size: 20px;
+    @extend .div13;  
+}
+$wid:10px;
+.div15{
+    width: ($wid)/2;
+}
+$img:'xx.jpg';
+.div16{
+  width: url('./img/'+$img);
+}
+.div17{
+    // color: lighten( #000000, 20%);
+    color: darken( red, 20%)
+}
+$m: (dark:#000,light:#fff);
+.div18{
+    color: map-get($m, dark );
+}
+@function foo($i){
+    @if($i==1)
+    {
+        @return red;
+    }
+    @else if($i==2){
+        @return green;
+    }
+    @else{
+        @warn"error";
+    }
+}
+.div19{
+    color:foo(1);
+}
+

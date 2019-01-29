@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .content{
+            width: 100%;
+            height: 100vh;
+            background-color:rgba(0,0,0,0.3);
+
+            position: relative;
+        }
+        .login{
+            height: 300px;
+            width: 500px;
+            position: absolute;
+            left: 50%;
+            margin-left:-250px; 
+            top: 50%;
+            margin-top: -110px;
+            background-color:rgba(0,0,0,0);
+            border: 1px solid black;
+        }
+        .kuang{
+            height: 50px;
+            width: 502px;
+            background-color: black;
+            position: absolute;
+            left: 50%;
+            margin-left:-250px; 
+            top: 50%;
+            margin-top:-160px; 
+            color:white;
+            line-height: 50px;
+        }
+        .span1{
+            float: right;
+        }
+        input{
+            display:inline-block;
+            height: 30px;
+            width: 200px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="bg">
+            <div class="content">
+                <button>登录</button>
+                <button>注册</button>
+                    <div class="kuang">
+                        <span>登录</span>
+                        <span class="span1">×</span>
+                    </div>
+                    <div class="login">
+                        <span>用户名：</span>
+                        <input type="text">
+                        <button>login</button>
+                    </div>
+                </div>
+    </div>
+    
+</body>
+</html>

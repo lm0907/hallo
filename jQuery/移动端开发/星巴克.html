@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    #app-view-wrapper{
+        position: relative;
+        height: 500px;
+    }
+    #nav{
+        position: absolute;
+        width: 30%;
+        height: 500px;
+        left: 0;
+        top: 0;
+    }
+    #content{
+        width: 70%;
+        background-color: aqua;
+        height: 500px;
+        float: right;
+    }
+    .container{
+        width: 100%;
+    }
+    #nav .container .header{
+        position: relative;
+        height: 48px;
+        box-sizing: content-box;
+        padding: 24px;   
+    }
+    #nav .logo{
+        float: left;
+        margin-right: 12px;
+        width: 36px;
+    }
+    #nav .logo img{
+        float: left ;
+        width: 36px;
+        max-width: 100%;
+    }
+    #nav .container .primary{
+        max-width: calc(100%-72px);
+        overflow: hidden;
+        display: inline-block;
+    }
+    #nav .container .primary ul{
+        display: inline-block;
+        padding: 0;
+        white-space: nowrap;
+    }
+    #nav .container .primary ul li{
+        float: left;
+        white-space: nowrap;
+    }
+    .primary li{
+        list-style: none;
+    }
+    #nav .container .primary ul a{
+        color:inherit;
+        padding: 5px 10px 5px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+    #nav .icon-trigger{
+        float: right;
+    }
+    .container .body{
+        width: 100%;
+        height: calc(100%-98px);
+        display: table;
+    }
+    .container .body .container.middle {
+        vertical-align: middle;
+        padding: 0 2px 0 84px;
+    }
+    .display1{
+        margin-bottom: 24px;
+    }
+    .container .body .display1 span{
+        width: 140%;
+        font-weight: 1400;
+        font-size: 80px;
+    }
+    #nav .secondary .account{
+        width: 100%;
+    }
+    @media (max-width:1080px){
+        #nav{
+            width: 100%;
+            height: 998px;
+            display: block;
+        }
+        #content{
+            width: 100%;
+        }
+    }
+    #nav .hide{
+      
+        width: 100%;
+        height: 500px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+        background-color: red;
+    }
+    #nav .active{
+        display: block;
+    }
+    </style>
+</head>
+<body>
+        <script src="../js/jquery-3.3.1.min.js"></script>
+    <div id="app-view-wrapper">
+        <nav id="nav">
+            <div class="container">
+                <header class="header">
+                    <a href="" class="logo">
+                        <img src="https://www.starbucks.com.cn/assets/images/logo.svg" alt="">
+                    </a>
+                    <div class="primary">
+                        <ul>
+                            <li class="stores">
+                                    <a id="stores-primary" href="/stores/">门店</a>
+                            </li>
+                            <li class="account">
+                                <a href="" id="account-primary" href="/account/">我的账户<span></span></a>
+                            </li>
+                            <li class="menu"><a href="" id="menu-primary">菜单</a></li>
+                        </ul>
+                    </div>
+                    <a href="" id="nav-menu" class="icon-trigger">
+                        <img src="https://www.starbucks.com.cn/assets/icons/icon-hamburger.svg" alt="" class="clickshow">
+                    </a>
+                </header>
+                <div class="body">
+                    <div id="account-entry" class="container middle secondary">
+                        <div >
+                            <span>
+                                <div class="display-1"><span>心情惬意，来杯咖啡吧&nbsp;☕</span></div>
+                                <footer class="account margin2 mobile-hidden"><a class="sign-in" href="/account/#/"><img src="https://www.starbucks.com.cn/assets/icons/icon-account.svg"><span><span>登录</span></span></a><a class="button small register" href="/account/register"><span><span>注册</span></span></a></footer>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hide ">
+               <ul>
+                   
+                    <li>a</li>
+                    <li>s</li>
+                    <li>d</li>
+                    <li>f</li>
+               </ul>
+
+            </div>
+        </nav>
+        <section id="content"></section>
+    </div>
+    <script>
+    // $("#nav .header .clickshow").click(function(){
+    //     $("#nav .hide").addClass("active");
+    //     console.log(1);
+    // });
+    $("#nav .header .clickshow").on("click",function(){
+        $("#nav .hide").addClass("active");
+
+    }) 
+    </script>
+</body>
+</html>

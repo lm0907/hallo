@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #out{
+            width: 500px;
+            height: 30px;
+            border-radius: 5px;
+            border: 1px solid;
+            margin-bottom: 20px;
+        }
+        #process{
+            height: 30px;
+            width: 0px;
+            position: relative;
+            top: 0px;
+        }
+        span {
+            font-size: 24px;
+        }   
+    </style>
+</head>
+<body>
+    <div id="out">
+        <div id="process"><span id="hts">0</span>%
+    </div>
+    <button id="btn">开始</button>
+    <script>
+        var Bt=document.getElementById("btn");
+        var Pro=document.getElementById("process");
+        var hs=document.getElementById("hts");
+        Bt.onclick=function(){
+               requestAnimationFrame(run);
+            
+        }
+        function run()
+        {
+            Pro.style.width=Pro.offsetWidth+10+"px";
+            Pro.style.backgroundColor="green";
+            if(Pro.offsetWidth<500){
+                requestAnimationFrame(run);
+            }
+            hs.innerText++;
+            hs.innerText++;
+            
+            
+        }
+    </script>
+</body>
+</html>

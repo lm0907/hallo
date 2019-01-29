@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+        }
+    .outside{
+        border: 1px dashed;
+        perspective: 1000px;
+        position: relative;
+    }
+    .inner1{
+        background-color: aqua;
+        transform-style: preserve-3d; 
+        transition: all 1s ease;
+        
+    }
+    .inner2{   
+        background-color: red;
+        transform: translateZ(1px);
+        position: absolute;
+        top:0;
+        transform: rotateY(-180deg);
+    }
+    .inner1:hover{ 
+        transform: rotateY(180deg);
+    }
+    </style>
+</head>
+<body>
+    <div class="outside">
+        <div class="inner1">fellow29
+            <div class="inner2">维创网讯</div>
+        </div>
+    </div>
+</body>
+</html>

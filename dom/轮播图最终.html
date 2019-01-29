@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   <style>
+   *{
+       margin: 0;
+       padding: 0;
+   }
+   body{
+       background-color: black;
+   }
+   img{
+       width: 490px;
+       height: 170px;
+   }
+   li{
+       list-style: none;
+   }
+   .outside{
+       width: 490px;
+       height: 170px;
+       margin: 0 auto;
+       border: 5px solid white;
+       position: relative;
+       /* overflow: hidden; */
+   }
+   .img-bar{
+       width: 2450px;
+       position: absolute;
+   }
+   .img-bar li{
+       float: left;
+   }
+   .leftbtn div,.rightbtn li{
+       border-radius:50%;
+       width: 20px;
+       height: 20px;
+       margin-right: 10px;
+       background-color: yellow;
+       color: black;
+       float: left; 
+       text-align: center;
+       line-height: 20px;
+       cursor: pointer;
+   }
+   .leftbtn{
+       position: absolute;
+       bottom: 10px;
+       left: 10px;
+   }
+   .rightbtn{
+       position: absolute;
+       bottom: 10px;
+       right: 10px;
+   }
+   .rightbtn .active{
+       background-color: red;
+   }
+   </style>
+</head>
+<body>
+    <div class="outside">
+        <div>
+            <ul class="img-bar">
+                <li><img src="1.webp.jpg" alt=""></li>
+                <li><img src="2.webp.jpg" alt=""></li>
+                <li><img src="4.webp.jpg" alt=""></li>
+                <li><img src="5.webp.jpg" alt=""></li>
+                <li><img src="6.webp.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="leftbtn">
+            <div>&lt;</div>
+            <div>&gt;</div>
+        </div>
+        <div class="rightbtn">
+            <ul>
+                <li class="active">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var page=document.getElementsByClassName("outside")[0];
+        var lebt=document.getElementsByClassName("leftbtn")[0].getElementsByTagName("div");
+        var ribt=document.getElementsByClassName("rightbtn")[0].getElementsByTagName("li");
+        var show=document.getElementsByClassName("img-bar")[0];
+        var timer=null,imgloop=null,nowindex=0,isrun=true;
+        var newnode=show.firstElementChild.cloneNode(true);
+        newnode.className="";
+        show.style.width=show.offsetWidth+490+"px";
+        show.appendChild(newnode);
+        run();
+        lebt[0].onclick=function(){
+            changeImg(nowindex-1);
+        }
+        lebt[1].onclick=function(){
+            changeImg(nowindex+1);
+        }
+        for(var i=0;i<ribt.length;i++){
+            ribt[i].index=i;
+            ribt[i].onmouseover=function(){
+                changeImg(this.index);
+            }
+        }
+        function changeImg(index){
+           
+            if(isrun){ 
+                var direction=-1;
+                nowindex>index?direction=1:direction=-1;
+                isrun=false;
+                nowindex=index;
+                if(index==5){
+                    nowindex=0;
+                }
+                if(index==-1){
+                    nowindex=4;
+                    index=4;
+                    show.style.left=-2450+"px";
+                }
+                for(var i=0;i<ribt.length;i++){
+                    ribt[i].className="";
+                }
+                ribt[nowindex].className="active";
+                imgloop=setInterval(function(){
+                    if(show.offsetLeft==-490*index)
+                    {
+                        clearInterval(imgloop);
+                        isrun=true;
+                        if(index==5){
+                            show.style.left=0;
+                        }
+                    }
+                    else{
+                        show.style.left=show.offsetLeft+(direction*10)+"px";
+                    }
+                },16);
+            }
+        }
+        page.onmouseover=function(){
+            clearInterval(timer);
+
+        }
+        page.onmouseout=function(){
+            run();
+        }
+        function run(){
+            timer=setInterval(function(){
+                changeImg(nowindex+1);
+            },3500);
+        }
+    </script>
+</body>
+</html>

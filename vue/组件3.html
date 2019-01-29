@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <button @click="clickhere">click</button>
+    <div :is="showarea"></div>
+    <!-- <weichuang></weichuang> -->
+    <!-- <fellow></fellow> -->
+  </div>
+  
+  <script>
+    Vue.component("weichuang",{
+      template:`<div>
+    <h1>change it</h1>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+  </div>`
+    })
+    Vue.component("fellow",{
+      template:`<div>
+    <h1>changed</h1>
+    
+  </div>`
+    })
+    new Vue({
+      el:"#app",
+      data:{
+        showarea:"weichuang"
+      },
+      methods:{
+        clickhere(){
+          
+          if(this.showarea=="weichuang"){
+            this.showarea="fellow" 
+          }
+          else{
+            this.showarea="weichuang"
+          }console.log(this.showarea)
+        }
+      }
+    })
+  </script>
+</body>
+</html>

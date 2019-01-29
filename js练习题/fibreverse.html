@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var count=0;
+        var a=[];
+    function fibl(n){
+        if(n==1||n==2)
+        return 1;
+        else{
+            return fibl(n-1)+fibl(n-2);
+        }
+    }
+    for(var i=1;i<=40;i++){
+        // str=str+fibl(i)+" ";
+        // count++;
+        a.push(fibl(i));
+    }
+  for(i=a.length-1;i>=0;i--){
+      document.write(a[i]+" ");
+      count++;
+      if(count%6==0){
+          document.write("</br>");
+      }
+  }
+
+
+    </script>
+</body>
+</html>

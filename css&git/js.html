@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        function chiwhat(s,q){
+            switch(q){
+                case 1:
+                alert(s+"吃宫保鸡丁");
+                break;
+                case 2:
+                alert(s+"吃鱼香茄子");
+                break;
+                case 3:
+                alert(s+"吃麻辣烫");
+                break;
+                case 4:
+                alert(s+"吃蒜泥白肉");
+                break;
+                case 5:
+                alert(s+"吃北京烤鸭");
+                break;
+
+            }
+        }
+     var n;
+     var person=[];
+     n=window.prompt("一共有几个人","");
+     for(var i=0;i<n;i++)
+     {
+         name=window.prompt("第"+(i+1)+"个人的名字","");
+         person.push(name);
+        
+     }
+     console.log(person);
+     for(var i=0;i<n;i++){
+        var random=Math.floor(Math.random()*5)+1;
+        chiwhat(person[i],random);
+     }
+    </script>
+    
+    
+</body>
+</html>

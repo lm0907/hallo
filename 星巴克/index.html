@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div class="container clearfix">
+        <div class="nav">
+            <div class="content">
+                <div class="header clearfix">
+                    <a href="javascript:void(0);" class="logo">
+                        <img src="https://www.starbucks.com.cn/assets/images/logo.svg" alt="">
+                    </a>
+                    <div class="primary">
+                        <ul>
+                            <li>门店</li>
+                            <li>我的账户</li>
+                            <li>菜单</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0);" class="icon">
+                        <img src="https://www.starbucks.com.cn/assets/icons/icon-hamburger.svg" alt="">
+                    </a>
+                </div>
+                <div class="body">
+                    <div class="container">
+                        <div class="bc-text">
+                            <span>心情惬意，来杯咖啡吧&nbsp;☕</span>
+                        </div>
+                        <div class="btn-bar">
+                            <a href="" class="sign-in">
+                                <img src="https://www.starbucks.com.cn/assets/icons/icon-account.svg" alt="">
+                                <span>登录</span>
+                            </a>
+                            <a href="" class="register">
+                                <span>注册</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="overlay">
+                <div class="no-header clearfix">
+                    <a href="javascript:void(0);" class="logo">
+                        <img src="https://www.starbucks.com.cn/assets/images/logo.svg" alt="">
+                        
+                    </a><button class="close"></button>
+                </div>
+                <div class="no-content">
+                    <div class="noc-body">
+                        <ul>
+                            <li>门店</li>
+                            <li>星享俱乐部</li>
+                            <li>菜单</li>
+                            <li>
+                                <hr>
+                            </li>
+                            <li>星巴克移动应用</li>
+                            <li>星礼卡</li>
+                            <li>星巴克臻选™</li>
+                            <li>专星送™</li>
+                            <li>咖啡星讲堂</li>
+                            <li>上海烘焙工坊</li>
+                            <li>关于星巴克</li>
+                            <li>帮助中心</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <div class="hero">
+                <div class="hero-btn"></div>
+                <ul class="hreo-contetn clearfix">
+                    <li>
+                        <img src="https://www.starbucks.com.cn/assets/images/featured/2019cny1/kv3.jpg" class="mobile-hidden">
+                        <img src="https://www.starbucks.com.cn/assets/images/featured/2019cny1/kv5-mobile.jpg" class="show-mobile">
+                    </li>
+                    <li>
+                        <img src="https://www.starbucks.com.cn/assets/images/featured/2019cny1/kv-0.jpg" class="mobile-hidden">
+                        <img src="https://www.starbucks.com.cn/assets/images/featured/2019cny1/kv-0-mobile.jpg" class="show-mobile">
+                    </li>
+                    <li>
+                        <img src="https://www.starbucks.com.cn/assets/images/featured/2019cny1/kv1.jpg" class="mobile-hidden">
+                        <img src="https://www.starbucks.com.cn/assets/images/featured/2019cny1/kv1-mobile.jpg" class="show-mobile">
+                    </li>
+                    <li>
+                        <img src="https://www.starbucks.com.cn/assets/images/featured/2019cny1/kv2.jpg" class="mobile-hidden">
+                        <img src="https://www.starbucks.com.cn/assets/images/featured/2019cny1/kv2-mobile.jpg" class="show-mobile">
+                    </li>
+                    <li>
+                        <img src="https://www.starbucks.com.cn/assets/images/featured/2019cny1/kv3.jpg" class="mobile-hidden">
+                        <img src="https://www.starbucks.com.cn/assets/images/featured/2019cny1/kv5-mobile.jpg" class="show-mobile">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        var nowWidth =0;
+    var nowIndex = 0;
+    $(".close").click(function () {
+      $(".overlay").removeClass("active");
+    })
+    $(".icon").click(function () {
+      $(".overlay").addClass("active");
+      console.log(1)
+    })
+    $(".hero-btn").click(function(){
+      var trans = ++nowIndex* nowWidth;
+        $(".hreo-contetn").css({
+          transform:'translateX('+(-trans)+'px)',
+          transition:'all .3s ease'
+        })
+      if(nowIndex == 4){
+        setTimeout(function(){
+          $(".hreo-contetn").css({
+          transform:'translateX(0px)',
+          transition:"none"
+        })
+        nowIndex = 0; 
+        },300)
+      }
+    })
+    function run(){
+      var trans = nowIndex* nowWidth;
+      $(".hreo-contetn").css({
+          transform:'translateX('+(-trans)+'px)',
+          transition:'none'
+        })
+    }
+    returnWinWidth();
+    function returnWinWidth(){
+      nowWidth = $(document).width()
+      if(nowWidth>1024){
+        nowWidth = nowWidth*0.7;
+      }
+      $(".hreo-contetn").width(nowWidth*5);
+    }
+    $(window).resize(function(){
+      returnWinWidth();
+      run();
+    })
+    </script>
+</body>
+</html>

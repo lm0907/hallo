@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // class Person{
+    //     constructor(name,age){
+    //         this.name=name;
+    //         this.age=age;
+    //     }
+    //     showInfo(){
+    //         console.log(this.name,this.age)
+    //     }
+    // }  
+    // class Teacher extends Person{
+    //     constructor(name,age,shcool){
+    //         super(name,age)
+    //         this.shcool=shcool;
+    //     }
+    //     showSchool(){
+    //         console.log(this.shcool)
+    //     }
+    // } 
+    // let po=new Teacher("xiaoming","18","heida")
+    // po.showInfo();
+    // po.showSchool();
+
+    function Person(name,age){
+        this.name=name;
+        this.age=age
+    }
+    Person.prototype.showInfo=function(){
+        console.log(this.name,this.age)
+    }
+    function Teacher(name,age,shcool){
+        Person.call(this,name,age)
+        this.shcool=shcool;
+    }
+    Teacher.prototype=new Person()
+    Teacher.prototype.showSchool=function(){
+        console.log(this.shcool)
+    }
+    Teacher.prototype.constructor=Teacher;
+    var student=new Teacher("xiaoming","18","qinghua")
+    console.log(student.name)
+    student.showInfo();
+    student.showSchool()
+    </script>
+</body>
+</html>

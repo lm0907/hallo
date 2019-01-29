@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    function merge(str1,str2){
+        var str="";
+        for(i=0;i<=str1.length||i<=str2.length;i++){
+            tmp1=str1.charCodeAt(i);
+            tmp2=str2.charCodeAt(i);
+            if(tmp1>0&&tmp2>0){str +=String.fromCharCode(tmp1).concat(String.fromCharCode(tmp2));}
+            
+            else if(tmp1>0){ str +=String.fromCharCode(tmp1);}
+           
+            else if(tmp2>0)
+            str +=String.fromCharCode(tmp2);
+
+        }
+        return str;
+    }
+    var x=window.prompt("one:","");
+    var y=window.prompt("two:","");
+    var z=merge(x,y);
+    alert(z);
+    </script>
+</body>
+</html>

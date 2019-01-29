@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{fullname}}
+    </div>
+    <script>
+    new Vue({
+        el:"#app",
+        data:{
+            firstname:10,
+            secondname:20,fullname:30
+        },
+        watch:{
+            firstname(val){
+                console.log(val)
+                this.fullname=val+this.secondname;
+            },
+            secondname(val){
+                console.log(val)
+                this.fullname=this.firstname+val;
+            }
+        }
+        // computed:{
+        //     fullname(){
+        //         return this.firstname+this.secondname;
+        //     }
+        // }
+    })
+    </script>
+</body>
+</html>

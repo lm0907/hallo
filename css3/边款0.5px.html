@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .outside{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: relative;
+        }
+        .outside::after{
+            content: "";
+            display: block;
+            border: 1px solid;
+            transform: scale(0.5);
+            transform-origin:0 0; 
+            width: 400px;
+            height: 400px;
+
+        }
+        .test{
+            position: absolute;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="outside">
+        <div class="test">hello world</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box{
+        width: 200px;
+        height: 200px;
+        margin: 100px auto;
+        border: 1px dashed;
+    }
+    .clock{
+        width: 200px;
+        height: 200px;
+        border: 1px solid;
+        border-radius: 50%;
+        position: relative;
+    }
+    li{
+        list-style: none;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 3px;
+        height: 5px;
+        background-color: black;
+        transform-origin: 0 100px;
+    }
+    li:nth-child(5n+1){
+        height: 10px;
+        background-color: red;
+    }
+    .clock div{
+        position: absolute;
+        left: 50%;
+        transform-origin: 50% bottom;
+    }
+    .hour{
+        width: 6px;
+        height: 32px;
+        background-color: green;
+        top:68px;
+    }
+    .minute{
+        width: 4px;
+        height: 36px;
+        background-color: blue;
+        top:64px;
+    }
+    .second{
+        width: 2px;
+        height: 54px;
+        background-color: yellow;
+        top: 46px;
+
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="clock">
+            <ul></ul>
+            <div class="hour"></div>
+            <div class="minute"></div>
+            <div class="second"></div>
+        </div>
+    </div>
+    <script>
+         var shour=document.getElementsByClassName("hour")[0];
+       var sminute=document.getElementsByClassName("minute")[0];
+       var sseccond=document.getElementsByClassName("second")[0];
+    var pointer=document.getElementsByTagName("ul")[0];
+    var s='';
+    for(var i=0;i<60;i++){
+        s+="<li style='transform:rotate("+(i*6)+"deg);'></li>"
+    }
+    pointer.innerHTML=s;
+    function run(){
+        var timer=new Date();
+        var seconds=timer.getSeconds();
+        var minutes=timer.getMinutes()+seconds/60;
+        var hours=timer.getHours()+minutes/60;
+        sseccond.style.transform='rotate('+(seconds*6)+'deg)';
+        shour.style.transform="rotate("+hours*30+"deg)";
+        sminute.style.transform="rotate("+minutes*6+"deg)"
+    }
+    run();
+    setInterval(function(){
+        run();
+    },1000);
+    </script>
+</body>
+</html>

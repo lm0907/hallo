@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../星巴克/js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div class="box"></div>
+    <button id="click">点击</button>
+    
+       
+    <script>
+    var obj={};
+    var show=document.querySelector(".box");
+    var btn=document.querySelector("#click");
+    btn.onclick=function(){
+        var arr=[];
+        for(var i=0;i<5;i++){
+            arr.push(Math.floor(Math.random()*10))
+        }
+        show.innerHTML=arr;
+        history.pushState(arr,"")
+    }
+    window.onpopstate=function(e){
+        show.innerHTML=e.state;
+    }
+    </script>
+   
+</body>
+</html>

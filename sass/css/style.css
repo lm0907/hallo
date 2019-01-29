@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.box {
+  color: "white"; }
+  .box .box1 {
+    width: 10px; }
+
+.div1 {
+  background-color: "white"; }
+  .div1-content {
+    width: 20px; }
+    .div1-content-text {
+      font-style: italic; }
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both; }
+
+.div10 {
+  border-right-width: 10px;
+  border-left: 2px; }
+
+.div11 {
+  width: 500px;
+  height: 500px; }
+
+.div12 {
+  width: 5px;
+  height: 20px; }
+
+.div13, .div14 {
+  color: aqua; }
+
+.div14 {
+  font-size: 20px; }
+
+.div15 {
+  width: 5px; }
+
+.div16 {
+  width: url("./img/xx.jpg"); }
+
+.div17 {
+  color: #990000; }
+
+.div18 {
+  color: #000; }
+
+.div19 {
+  color: red; }
+
+/*# sourceMappingURL=style.css.map */

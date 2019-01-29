@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <style>
+        .box{
+            overflow: hidden;
+        }
+        .container{
+            width: 400px;
+            height: 100px;
+            overflow-x: scroll;
+            overflow-y:hidden; 
+            padding-bottom:20px; 
+             margin-bottom: -20px;
+        }
+        ul{
+            white-space: nowrap;
+        }
+        li{
+            list-style: none;
+            display: inline-block;
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="container">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+            </ul>
+        </div>
+    </div>
+    <button id="left-btn">向左</button>
+    <button id="right-btn">向右</button>
+    <script>
+    $("#right-btn").click(function(){
+      clickbtn('right');
+    })
+    $("#left-btn").click(function(){
+      clickbtn("left");
+    })
+    function clickbtn(dir){
+       
+        var nowLeft = $(".container").scrollLeft();
+        var scrollNum = dir == "left"? nowLeft-100 : nowLeft+100 ;
+        $(".container").animate({
+            scrollLeft:scrollNum
+        },1000,function(){
+            showbtn();
+        })
+    }
+    function showbtn(){
+        $("#left-btn").show();
+        $("#right-btn").show();
+        var scrollLeft=$(".container").scrollLeft();
+        var clientwidth=$(".container").width();
+        var scrollwidth=$(".container").get(0).scrollWidth;
+        if(scrollLeft==0){
+            $("#left-btn").hide();
+        }
+        else if(clientwidth+scrollLeft==scrollwidth){
+            $("#right-btn").hide();
+        }
+    }
+    $(".container").scroll(function(){
+        showbtn()
+    })
+    </script>
+</body>
+</html>

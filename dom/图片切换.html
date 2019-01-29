@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .big{
+            width: 1000px;
+            height: 400px;
+            border: 1px solid grey;
+            text-align: center;
+            position: relative;
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .big img{
+            width: 400px;
+            height: 400px;
+        }
+        .small{
+            width: 1000px;
+            height: 200px;
+            border: 1px solid grey;
+        }
+        .small li{
+            list-style: none;
+            float: left;
+            width: 200px;
+            height: 200px;
+            margin-right: 40px;
+        }
+        .small img{
+            width: 200px;
+            height: 200px;
+        }
+        .left{
+            position: absolute;
+            left: 10px;
+            top: 200px;
+        }
+        .right{
+            position: absolute;
+            right: 10px;
+            top: 200px;
+        }
+        .clearfix{
+            margin:0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="big">
+            <img src="1.webp.jpg" alt="" id="big-show">
+            <div class="left" id="leftbt"><</div>
+            <div class="right" id="rightbt">></div>
+        </div>
+        <div class="small">
+           <ul id="small-img" class="clearfix">
+               <li><img src="1.webp.jpg" alt=""></li>
+               <li><img src="2.webp.jpg" alt=""></li>
+               <li><img src="4.webp.jpg" alt=""></li>
+               <li><img src="5.webp.jpg" alt=""></li>
+           </ul>
+        </div>
+    </div>
+    <script>
+        var show=document.getElementById("big-show");
+    var btl=document.getElementById("leftbt");
+    var btr=document.getElementById("rightbt");
+    var imgg=document.getElementById("small-img").getElementsByTagName("img");
+    var arr=[];
+    var nowindex=null;
+    for(var i=0;i<imgg.length;i++){
+        arr.push(imgg[i].getAttribute("src"));
+    }
+    console.log(arr)
+    function showImg(index){
+        show.setAttribute("src",arr[index]);
+        nowindex=index;
+    }
+    btl.onclick=function(){
+        if(nowindex==0)
+        {
+            showImg(3);
+        }
+        else{
+            showImg(--nowindex);
+        }
+    }
+    btr.onclick=function(){
+        if(nowindex==3)
+        {
+            showImg(0);
+        }
+        else{
+            showImg(++nowindex);
+        }
+    }
+    for(var i=0;i<imgg.length;i++){
+        imgg[i].index=i;
+        imgg[i].onmouseover=function(){
+            showImg(this.index);
+        }
+    }
+    </script>
+</body>
+</html>

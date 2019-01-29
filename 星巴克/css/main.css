@@ -1,0 +1,236 @@
+/* gloabal */
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5% !important;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background-color: #f7f7f7;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+/* nav */
+@media (min-width:1025px){
+    .container .nav{
+        width: 30%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+    }
+    .overlay{
+        width: 30%;
+    }
+}
+@media (min-width:641px) and (max-width:1024px){
+    .container .nav{
+        width: 100%;
+    }
+    .nav .btn-bar{
+        margin-bottom:20px; 
+    }
+    .nav .body .container{
+        padding: 0 16px !important;
+    }
+    .overlay{
+        right: 0;
+    }
+}
+@media (max-width:640px){
+    .container .nav .header{
+        display: none;
+    }
+    .container .nav .btn-bar{
+        display: none;
+    }
+    .nav .body .container{
+        padding:16px 16px 0 16px !important;
+      }
+    .nav .container span{
+    font-size: 2.2rem;
+    }
+}
+.nav{
+    background-color:#fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.12) ;
+}
+.nav .content{
+    height: 100%;
+}
+.nav .header{
+    padding: 24px;
+}
+.nav .header .logo{
+    float: left;
+    margin-right: 12px;
+}
+.nav .header img{
+    width: 36px;
+}
+.nav .primary{
+    float: left;
+}
+.nav .primary li{
+    float: left; 
+    font-size: 1.6rem;
+    padding: 5px 10px 5px;
+    font-weight: 700;
+}
+.nav .header .icon{
+    float: right;
+    padding: 6px 0;
+}
+.nav .body{
+    height: calc(100% - 98px);
+    display: table;
+}
+.nav .body .container{
+    padding: 0 24px 0 84px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.nav .body .bc-text{
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+.nav .btn-bar span{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #00A862;
+}
+.nav .btn-bar .sign-in {
+   float: left;
+}
+.nav .sign-in img{
+    vertical-align: middle;
+    margin-top: -5px;
+}
+.nav .register{
+    border: 1px solid #00A862;
+    border-radius: 48px;
+    padding: 9px 15px 5px 15px;
+    margin-left: 20px;
+}
+/* overlay */
+.overlay{
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .1s ease;
+}
+.overlay.active{
+    visibility: visible;
+    opacity: 1;
+}
+.overlay .no-header{
+    padding: 24px;
+}
+.overlay .no-header .logo{
+    float: left;
+}
+.overlay .no-header .logo img{
+    width: 36px;
+}
+.overlay .no-header .close{
+    float: right;
+    background: url("https://www.starbucks.com.cn/assets/icons/icon-close.svg") no-repeat;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    outline: none;
+    background-position:center;
+    margin: -12px;
+}
+.no-content{
+    display: table;
+    height: calc(100% - 98px);
+    width: 100%;
+    transform: scale(1.2);
+    transition: all 1s ease;
+}
+.overlay.active .no-content{
+    transform: scale(1);
+}
+.no-content .noc-body{
+    width: 100%;
+    padding:0 24px 0 84px;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+.no-content .noc-body li{
+    padding: 8px 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+.no-content .noc-body hr{
+    background-color: rgba(0,0,0,.12);
+    height: 1px;
+    border:0;
+}
+@media (min-width:1025px){
+    .container .content-body{
+        width: 70%;
+        height: 500px;
+        margin-left: 30%;
+    }
+    .show-mobile{
+        display: none;
+    }
+}
+@media (min-width:641px) and (max-width:1025px){
+    .container .content-body{
+        width:100%;
+      }
+      .show-mobile{
+        display: none;
+      }
+}
+@media (max-width:640px){
+    .mobile-hidden{
+      display: none
+    }
+  }
+  .container .hero{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  .container .hero ul{
+    /* /* width: 400 */
+  }
+  .container .hero li{
+    float: left;
+  }
+  .container .hero li{
+    width: 20%;
+  }
+  .container .hero img{
+    width: 100%;
+  }
+  .container .hero .hero-btn{
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    transform: translateY(-50%);
+    right: 40px;
+    width: 48px;
+    height: 48px;
+    background: url('https://www.starbucks.com.cn/assets/icons/icon-arrow-white.svg') no-repeat;
+  }

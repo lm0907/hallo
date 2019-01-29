@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <weichuang msg="123" nfg="789"></weichuang>
+    <fellow msg="456"></fellow>
+  </div>
+  
+  <script>
+  Vue.component("weichuang",{
+    template:`<div>
+    <h1>{{msg}}</h1>
+    <fel></fel>
+    <ul>
+      <li>1{{nfg}}</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+  </div>`,props:["msg","nfg"]
+  })
+  Vue.component("fel",{
+    template:`<div>
+    <h1>嵌套全局</h1>
+  </div>`
+  })
+  new Vue({
+    el:"#app",
+    components:{
+      "fellow":{
+        template:`<div>
+          <h1>{{msg}}嵌套</h1>
+          <weichuang msg="123" nfg="789"></weichuang>
+        </div>`,
+        props:["msg"]
+      }
+    }
+  })
+  </script>
+</body>
+</html>

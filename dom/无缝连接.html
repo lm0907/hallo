@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .clearfix:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+    .outside{
+        width: 800px;
+        height: 200px;
+        border: 1px solid grey;
+        position: relative;
+        left: 340px;
+        overflow: hidden;
+    }
+    li{
+        list-style: none;
+        width: 200px;
+        height: 200px;
+        background-color: black;
+        color: white;
+        float: left;
+        text-align: center;
+        line-height: 200px;
+        margin-right: 10px;
+    }
+    ul{
+        width: 2100px;
+        height: 200px;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+    }
+    .btnl{
+        position: absolute;
+        left: 700px;
+        top: 220px;
+    }
+    .btnr{
+        position: absolute;
+        left: 900px;
+        top: 220px;
+    }
+    </style>
+</head>
+<body >
+    <div class="outside ">
+        <ul class="clearfix">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <button class="btnl" id="btnll">向左</button>
+    <button class="btnr" id="btnrr">向右</button>
+    <script>
+        var timerl,timerr;
+    var mv=document.getElementsByTagName("ul")[0];
+    var btl=document.getElementById("btnll");
+    var btr=document.getElementById("btnrr");
+    mv.innerHTML+=mv.innerHTML;
+    btl.onclick=function(){
+        clearInterval(timerr);
+        timerl=setInterval(function(){
+            
+            if(mv.offsetLeft==0){
+                mv.style.left=-1040+"px";
+            }
+            else{
+                mv.style.left=mv.offsetLeft+10+"px";
+            }
+
+        },50);
+
+    }
+    btr.onclick=function(){
+        clearInterval(timerl);
+        var direction=1;
+        timerr=setInterval(function(){
+            if(mv.offsetLeft==-1040){
+               mv.style.left=0+"px";
+            }
+            else{
+                mv.style.left=mv.offsetLeft-10+"px";
+            }
+            console.log(mv.offsetLeft);
+        },50);
+    }
+    </script>
+</body>
+</html>

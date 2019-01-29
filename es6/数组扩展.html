@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <script>
+    // var ali=document.querySelectorAll("li")
+    // console.log(Array.from(ali))
+
+    // let jason={
+    //     0:"a",1:"b",2:"c",length:3
+    // }
+    // console.log(Array.from(jason))
+
+    // console.log(Array.of(1,2,"a",{},null,undefined))
+    
+    // var arr=[1,2,3,4,5,6,7,8,9]
+    // console.log(arr.copyWithin(1,4,7))
+
+    
+    // var arr1=[1,2,3,4,5,6,7,8,9]
+    // var num=arr1.find(function(key,val,arr){
+    //     return val>5
+    // })
+    // console.log(num)
+
+    //es6数组去重
+    // var arr=[1,2,3,1,2]
+    // var nset=new Set(arr)
+    // console.log(Array.from(nset))
+
+    // var newarr=[]
+    // for(var val of arr){
+    //     if(!newarr.includes(val))
+    //     {
+    //         newarr.push(val)
+    //     }
+    // }
+    // console.log(newarr)
+
+    // var arr=[1,2,3,4,5,6]
+    // var arr1=arr.findIndex(function(key,val,a){
+    //     return val>4
+    // })
+    // console.log(arr1)
+
+    // var arr=[1,2,3,4,5]
+    // arr.forEach(function(val,key,a){
+    //     console.log(val,key,a)
+    // })
+
+    // var arr=[1,2,3,4,5]
+    // arr.fill("xy",1,3)
+    // console.log(arr)
+
+    // var arr=new Array(10).fill("xy")
+    // console.log(arr)
+    
+    // var arr=["h","e"]
+    // console.log(arr.includes("g"))
+
+    // var arr=["a","b","c","d"]
+    // for(var val of arr){
+    //     console.log(val)
+    // }
+
+    // var arr=["a","b","c","d"]
+    // for(var key of arr.keys()){
+    //     console.log(key)
+    // }
+
+    // var arr=["a","b","c","d"]
+    // for(var [ley,val] of arr.entries()){
+    //     console.log(ley,val)
+    // }
+
+    // let arr=[1,2,3,4,5,6,7,8,9]
+    // var bew=arr.map(function(val,key,a){
+    //     if(val>5){
+    //         return val;
+    //     }
+    //     else{
+    //         return 0;
+    //     }
+    // })
+    // console.log(bew)
+
+    // let arr=[1,2,3,4,5,6,7,8,9]
+    // var newa=arr.filter(function(val,key,a){
+    //     if(val>5)
+    //     return val
+    // })
+    // console.log(newa)
+
+    // let arr=[1,2,3,4,5,6,7,8,9]
+    // var newa=arr.some(function(val,key,a){
+    //     if(val>5)
+    //     return val
+    // })
+    // console.log(newa)
+
+    let arr=[1,2,3,4,5,6,7,8,9]
+    var newa=arr.every(function(val,key,a){
+        if(val>0)
+        return val
+    })
+    console.log(newa)
+    </script>
+</body>
+</html>

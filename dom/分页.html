@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .top{
+            height: 40px;
+            width: 500px;
+            background-color: black;
+        }
+        .top li{
+            float: left;
+            color: white;
+            margin-right: 10px;
+            list-style: none;
+            line-height: 40px;
+            width: 75px;
+            text-align: center;
+        }
+        .bottom{
+            border: 1px solid;
+            width: 498px;
+        }
+        .top .active{
+            background-color: grey;
+            color: black;
+        }
+        .bottom ul{
+            display: none;
+        }
+        .bottom .active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="top">
+            <ul id="move">
+                <li class="active">第一课</li>
+                <li>第二课</li>
+                <li>第三课</li>
+            </ul>
+        </div>
+        <div class="bottom" id="show">
+            <ul class="active">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+    var mv=document.getElementById("move").getElementsByTagName("li");
+    var sh=document.getElementById("show").getElementsByTagName("ul");
+    for(var i=0;i<mv.length;i++){
+        mv[i].index=i;
+        mv[i].onmouseover=function(){
+            for(var j=0;j<mv.length;j++){
+                mv[j].className="";
+                sh[j].className="";
+            }
+            mv[this.index].className="active";
+                sh[this.index].className="active";
+        }
+    }
+    </script>
+</body>
+</html>

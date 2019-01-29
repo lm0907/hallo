@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // function foo(...arg){
+    //     console.log(arg)
+    // }
+    // foo(1,2,3)
+    // let arr=[1,2,3];
+    // let arr1=[4,5];
+    // // console.log(arr.concat(arr1))
+    // arr1=[...arr,4,5]
+    // console.log(arr1)
+    // let arr=[1,2,3]
+    // let arr1=[...arr]
+    // arr[0]="aa"
+    // console.log(arr1)
+// let arr=[1,2,3,["a","b","c"]]
+//     let arr1=[...arr]
+//     arr[3][0]="1"
+//     console.log(arr1)
+// let arr=[1,2,3]
+// let arr1=[4,5,6]
+// let arr2=[...arr,...arr1]
+// console.log(arr2)
+// let obj={
+//     name:"xiaohong",age:20
+// }
+// let obj1={
+//     name:"xiaoh"
+// }
+
+// let obj2={...obj,...obj1}
+// console.log(obj2)
+function foo(a,b,...arg){
+    console.log(a,b,arg)
+}
+foo(1,2,3,4,5)
+
+    </script>
+</body>
+</html>

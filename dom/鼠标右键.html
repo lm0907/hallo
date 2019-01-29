@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .out{
+            height:160px;
+            width: 115px;
+            border: 1px solid;
+            display: none;
+            position: absolute;
+        }
+        .out div{
+            height: 39px;
+            width: 115px;
+            border-top: 1px solid;
+            text-align: center;
+            line-height: 39px;
+        }
+        .out div:hover{
+            background-color: grey;
+        }
+        .out div:nth-child(1){
+            border-top:none; 
+        }
+    </style>
+</head>
+<body>
+    <div class="out" id="bp">
+        <div>设置待办</div>
+        <div>设置未读</div>
+        <div>设置已读</div>
+        <div>删除右键</div>
+    </div>
+    <script>
+        var show=document.getElementById("bp");
+        document.oncontextmenu=function(e){
+            e.preventDefault();
+            show.style.display="block";
+            show.style.left=e.clientX+"px";
+            show.style.top=e.clientY+"px";
+        }
+        var s=document.getElementById("bp").getElementsByTagName("div");
+        for(var i=0;i<s.length;i++){
+            s[i].index=i;
+            s[i].onclick=function(){
+                for(var j=0;j<s.length;j++)
+                {
+                    s[j].className="";
+                }
+                this.className="active";
+                console.log(this.index);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            width: 500px;
+            height: 470px;
+        }
+        li{
+            list-style: none;
+        }
+        body{
+            background-color: black;
+        }
+        .outside{
+            position: relative;
+            width: 500px;
+            height: 470px;
+            margin: 0 auto;
+            border: 5px solid white;
+        }
+        .img-bar li{
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        .img-bar .active{
+            display: block;
+        }
+        .rightbtn .active{
+            background-color: red;
+        }
+        .leftbtn div:hover,.rightbtn li:hover{
+            cursor: pointer;
+        }
+        .leftbtn{
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+        }
+        .rightbtn{
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+        .leftbtn div,.rightbtn li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: aqua;
+            text-align: center;
+            line-height: 20px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outside">
+        <div class="img-bar">
+            <ul>
+                <li class="active"><img src="1.webp.jpg" alt=""></li>
+                <li><img src="2.webp.jpg" alt=""></li>
+                <li><img src="4.webp.jpg" alt=""></li>
+                <li><img src="5.webp.jpg" alt=""></li>
+                <li><img src="6.webp.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="leftbtn">
+            <div>&lt;</div>
+            <div>&gt;</div>
+        </div>
+        <div class="rightbtn">
+            <ul>
+                <li class="active">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var out=document.getElementsByClassName("outside")[0];
+        var lbt=document.getElementsByClassName("leftbtn")[0].getElementsByTagName("div");
+        var rbt=document.getElementsByClassName("rightbtn")[0].getElementsByTagName("li");
+        var imgshow=document.getElementsByClassName("img-bar")[0].getElementsByTagName("li");
+        var nowindex=0;
+        var timer;
+        console.log(out);
+        run();
+        lbt[0].onclick=function(){
+            if(nowindex==0){showImg(4)}
+            else{showImg(--nowindex);}
+        }
+        lbt[1].onclick=function(){
+            if(nowindex==4){showImg(0)}
+            else{showImg(++nowindex);}
+        }
+        for(var j=0;j<imgshow.length;j++){
+            rbt[j].index=j;
+            rbt[j].onmouseover=function(){
+                showImg(this.index);
+            }
+            
+        }
+        function showImg(index){
+            for(var i=0;i<imgshow.length;i++){
+                imgshow[i].className="";
+                rbt[i].className="";
+            }
+            imgshow[index].className="active";
+            rbt[index].className="active";
+            nowindex=index;
+        }
+        function run(){
+            timer=setInterval(function(){
+                lbt[1].onclick();
+            },1000);
+        }
+        out.onmouseover = function(){
+      clearInterval(timer)
+    }
+    // 鼠标移出时创建定时函数
+    out.onmouseout = function(){
+      run();
+    }
+    </script>
+</body>
+</html>

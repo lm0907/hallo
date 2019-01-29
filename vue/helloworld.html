@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    {{msg}}
+    <h1 v-if="isshow==1">1</h1>
+    <h1 v-else-if="isshow==2">2</h1>
+    <h1 v-else>3</h1>
+    <h1 v-show="show">是真的啦</h1>
+    <ul>
+      <li v-for="(val,index) in arr">{{val}}---{{index}}</li>
+    </ul>
+    <ul>
+      <li v-for="(val,key,index) in obj">{{val}}-{{key}}-{{index}}</li>
+    </ul>
+    <div v-text="txt"></div>
+  </div>
+  <script> 
+  new Vue({
+    el:"#app",
+    data:{
+      msg:"hello",
+      isshow:5,
+      show:true,
+      arr:[1,2,3,4,5],
+      obj:{
+        name:"lo",
+        age:20
+      },
+      txt:"justfortest"
+    }
+  })
+  </script>
+</body>
+</html>

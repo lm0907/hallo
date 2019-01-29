@@ -1,0 +1,20 @@
+*{
+  margin:0;
+  padding:0;
+}
+#box{
+  color: red;
+  height: 100px;
+  width: 100px;
+  transform: rotate(30deg);
+  background-image: url(../img/01.jpg);
+}
+.aaa{
+  color: red;
+}
+.aa-div10{
+  width: 100px;
+}
+.span{
+  height: 100px;
+}

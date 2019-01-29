@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div><button @click="test1()">点击1</button>{{num1}}</div>
+        <div><button @click="test2()">点击2</button>{{num2}}</div>
+        {{sum}}
+    </div>
+    <script>
+    new Vue({
+        el:"#app",
+        data:{
+            num1:1,num2:1
+        },
+        methods:{
+            test1(){
+                this.num1 +=1
+            },
+            test2(){
+                this.num2 +=1
+            }
+        },
+        computed:{
+            sum(){
+                return this.num1+this.num2;
+            }
+        }
+    })
+    </script>
+</body>
+</html>

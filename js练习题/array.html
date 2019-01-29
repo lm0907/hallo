@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var array=new Array(7);
+        var sum,aver;
+        var low=new Array();
+        for(var i=0;i<array.length;i++)
+        {
+            array[i]=parseInt(window.prompt("请输入第"+(i+1)+"个成绩",""));
+             sum+=array[i];
+            if(array[i]<60)
+            {
+                low.push(array[i]);
+            }
+            document.write(array[i]+" ");
+        }
+        aver=sum/7;
+        document.write(sum);
+        document.write(" "+"\n");
+        document.write(aver);
+        document.write(" "+"\n");
+        for(var j=0;j<low.length;j++)
+        {
+            document.write(low[j]+" ");
+        }
+
+    </script>
+</body>
+</html>
