@@ -5,68 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="./js/jquery-3.3.1.min.js"></script>
     <style>
-    td{
+         td{
         width: 100px;
 
     }
+   
     </style>
 </head>
 <body>
-    <span>筛选：</span>
-    <input type="text">
-    <table>
-        <tr>
-            <td>姓名</td>
-            <td>性别</td>
-            <td>暂住地</td>
-        </tr>
-        <tr>
-            <td>里斯</td>
-            <td>女</td>
-            <td>浙江杭州</td>
-        </tr>
-        <tr>
-            <td>张山</td>
-            <td>男</td>
-            <td>浙江宁波</td>
-        </tr>
-        <tr>
-            <td>万物</td>
-            <td>男</td>
-            <td>湖南长沙</td>
-        </tr>
-        <tr>
-            <td>零零</td>
-            <td>女</td>
-            <td>黑龙江齐市</td>
-        </tr>
-        <tr>
-            <td>间宽</td>
-            <td>男</td>
-            <td>浙江温州</td>
-        </tr>
-        <tr>
-            <td>时间</td>
-            <td>女</td>
-            <td>吉林白城</td>
-        </tr>
-        <tr>
-            <td>陇南</td>
-            <td>女</td>
-            <td>河北沧州</td>
-        </tr>
-    </table>
+        <span>筛选：</span>
+        <input type="text">
+        <table>
+            <thead>
+                <tr>
+                    <td>姓名</td>
+                    <td>性别</td>
+                    <td>暂住地</td>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>里斯</td>
+                <td>女</td>
+                <td>浙江杭州</td>
+            </tr>
+            <tr>
+                <td>张山</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+            <tr>
+                <td>万物</td>
+                <td>男</td>
+                <td>湖南长沙</td>
+            </tr>
+            <tr>
+                <td>零零</td>
+                <td>女</td>
+                <td>黑龙江齐市</td>
+            </tr>
+            <tr>
+                <td>间宽</td>
+                <td>男</td>
+                <td>浙江温州</td>
+            </tr>
+            <tr>
+                <td>时间</td>
+                <td>女</td>
+                <td>吉林白城</td>
+            </tr>
+            <tr>
+                <td>陇南</td>
+                <td>女</td>
+                <td>河北沧州</td>
+            </tr>
+            </tbody>
+        </table>
+    <script src="./js/jquery-3.3.1.min.js"></script>
     <script>
-
-        // $("input").keyup(function(){
-        //     $("tr:gt(0)").hide();
-        //     $("tr:contains("+this.value+")").show();
-        // })
-        $("input").keyup(function(){
-            $("tr:gt(0)").hide().filter(":contains("+this.value+")") .show();       
-        })
+    $("input").keyup(function(){
+        $("tbody tr").hide().filter($("tbody tr:contains("+$(this).val()+")")).show();
+    })
     </script>
 </body>
 </html>

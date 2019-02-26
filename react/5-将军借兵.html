@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/react.production.min.js"></script>
+  <script src="./js/react-dom.production.min.js"></script>
+  <script src="./js/browser.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+  class General extends React.Component{   
+      constructor(props){
+          super(props);
+          this.asksolider=this.asksolider.bind(this)
+      } 
+
+      asksolider(){
+        this.props.gs(this.props.name)
+      }
+      render(){
+          return (<div>
+            <h1>将军{this.props.name}的士兵人数是{this.props.snum}</h1>
+            <button onClick={this.asksolider}>调兵</button>
+            </div>)
+      } 
+  }
+  class King extends React.Component{   
+      constructor(props){
+          super(props);
+          this.state={
+              allsolider:100,
+              general1ssolider:100,
+              general2ssolider:100
+          }
+      } 
+      getsolider(name){
+          let all=this.state.allsolider;
+          let one=this.state.general1ssolider;
+          let two=this.state.general2ssolider;
+        if(name=="a"){
+            one+=10;
+        }
+        else if(name=="b"){
+            console.log(11111);
+            
+            two+=10;
+        }
+        all-=10;
+        this.setState({
+            allsolider:all,
+            general1ssolider:one,
+            general2ssolider:two
+        })
+      }
+      render(){
+          return (<div>
+            <h1>国王的士兵人数是{this.state.allsolider}</h1>
+            <General name={"a"} snum={this.state.general1ssolider} gs={this.getsolider.bind(this)}></General>
+            <General name={"b"} snum={this.state.general2ssolider} gs={this.getsolider.bind(this)}></General>
+            </div>)
+      } 
+  }
+  ReactDOM.render(
+      <King></King>,
+      document.getElementById("root")
+  )
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/react.production.min.js"></script>
+    <script src="./js/react-dom.production.min.js"></script>
+    <script src="./js/browser.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+    
+    function App(props) {
+        let istrue=false;
+    let str=null;
+        if(istrue){
+            str=<App1/>
+        }
+        else{
+            str=<App2/>
+        }
+        return <div>{str}</div>
+    }   
+    class App1 extends React.Component{
+            constructor(props){
+                super(props);
+            }
+            render(props) {
+                return (
+                    <div>
+                        <h1>hello </h1>        
+                    </div>
+                )
+            }
+        }
+        class App2 extends React.Component{
+            constructor(props){
+                super(props);  
+            }  
+            render(props) {
+                return (
+                    <div>
+                        <h1>idiot</h1>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <App></App>,
+            document.getElementById("root")
+        )
+    </script>
+</body>
+</html>

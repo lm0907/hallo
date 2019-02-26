@@ -65,7 +65,7 @@
         </div>
     </div>
     <script>
-    $("#move li").click(function(){
+    $("#move li").mouseover(function(){
         $(this).add("#show ul:eq("+$(this).index()+")").addClass("active").siblings().removeClass("active");
         // $("#show ul:eq("+$(this).index()+")").addClass("active").siblings().removeClass("active");
     })
