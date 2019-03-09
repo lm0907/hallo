@@ -11,9 +11,7 @@ const add =(num)=>{
  class Class6 extends Component {
   constructor(props) {
     super(props);
-    this.state={
-      count:10
-    }
+    
   }
   
   addHandle(){

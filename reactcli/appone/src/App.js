@@ -7,6 +7,7 @@ import Class3 from "./components/Class3";
 import Class4 from "./components/Class4";
 import Class5 from "./components/Class5";
 import Class6 from "./components/Class6";
+import Class7 from "./components/Class7";
 import {Provider} from 'react-redux';
 import store from './store';
 import	{	BrowserRouter as	Router,	Route,	Link,Switch	,Redirect}	from	"react-router-dom";
@@ -30,6 +31,7 @@ class App extends Component {
           <Link to="/class4">class4</Link> |
           <Link to="/class5">class5</Link> |
           <Link to="/class6">class6</Link> |
+          <Link to="/class7">class7</Link> |
           <Link to="/test/10">test</Link> |
           <Link to="/render">render</Link> |
           <Link to="/redirect">redirect</Link> |
@@ -39,6 +41,7 @@ class App extends Component {
           <Route path={"/class4"} component={Class4}></Route>
           <Route path={"/class5"} component={Class5}></Route>
           <Route path={"/class6"} component={Class6}></Route>
+          <Route path={"/class7"} component={Class7}></Route>
           <Route path={"/test/:id"} component={Test}></Route>
           <Route path={"/render"} render={()=>(<div><h1>render</h1></div>)}></Route>
           <Route path={"/redirect"} render={()=><Redirect to="/"/>}></Route>
