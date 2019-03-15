@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>时光不老,我们不散</title>
+		<style type="text/css">
+		body,html{
+			width: 100%;
+			height: 100%;
+			background-color: #000;
+		}
+		div{
+			position: absolute;
+			border-radius: 50%;
+		}
+		#txt{
+			position: relative;
+			width: 400px;
+			height: 100px;
+			margin: 300px 600px;
+			font-size: 50px;
+			z-index: 1000;
+		}
+        p{
+            color: white;
+        }
+        img{
+            background-size: cover；
+        }
+		</style>
+	</head>
+	<body>
+		<div id="txt">
+            <p>你喜欢的有很多，我喜欢的只有你!</p>
+            <p>生日快乐🎂🐢</p>			
+		</div>
+		<embed src="mp3/周杰伦 - 告白气球.mp3" autostart="true" loop="true" hidden="true"></embed>
+ 
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript">
+			//照片
+			var n = 1;
+			var t =setInterval(function(){
+				var b = new Balloon("url(image/img"+n+".jpg)");
+				//绘制气球
+				b.drawBalloon(document.body);
+				//气球动起来
+				b.run();
+				n++;
+				if(n>6){
+					clearInterval(t);
+				}
+			},6000);
+			
+			//气球
+			for (var i =0; i<=30;i++){
+			//创建气球对象
+			var b = new Balloon();
+			//绘制气球
+			b.drawBalloon(document.body);
+			//气球动起来
+			b.run();
+			}
+		
+		</script>
+	</body>
+</html>
